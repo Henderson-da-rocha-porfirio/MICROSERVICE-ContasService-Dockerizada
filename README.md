@@ -165,4 +165,4 @@ docker image inspect df1
 
 > 3. Abra o Painel > Configurações:
 > 4. Selecione Docker Engine e edite o campo json de 'true' para 'false' se ainda não estiver.
-FONTE: [buildkit](https://stackoverflow.com/questions/66839443/how-to-enable-disable-buildkit-in-docker)
+> FONTE: [buildkit](https://stackoverflow.com/questions/66839443/how-to-enable-disable-buildkit-in-docker)
