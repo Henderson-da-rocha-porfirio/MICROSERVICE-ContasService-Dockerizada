@@ -246,3 +246,8 @@ b. Aqui está a versão correta do Dockerfile onde mencionamos o local de origem
  ADD /home/src/first.txt  /destination/
  ADD /home/src/second.txt /destination/
 ````
+> 2. Permissão no caminho de destino e origem
+````
+Pode ser possível que seu dockerfileou docker-compose.yamlesteja correto, mas ainda assim você está recebendo erro na cópia do docker . Nesses casos, vale a pena verificar a permissão (read, writer, execute) do diretório de origem, bem como a direção de destino.
+````
+> 3. Mais conceitos sobre [ADD & COPY](https://jhooq.com/docker-copy-vs-docker-add/)
