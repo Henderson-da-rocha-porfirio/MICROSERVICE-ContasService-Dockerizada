@@ -262,3 +262,32 @@ docker run -p 8080:8080 tuyosistema/accounts-dockerizada
 2. Colcocar ".jar" aonde tiver o nome do arquivo. Tipo: accounts-dockerizada-0.0.1-SNAPSHOT.jar
 3. Tentar apagar a pasta target e dar um novo mvn install: mvn clean install -Dmaven.test.skip=true -Dpmd.skip=true
 4. Se possível apagar os containers primeiro e imagens associadas a eles e fazer um novo build.
+
+#### 8. Criando Novas instâncias (novo container)
+````
+docker run -p 8081:8080 tuyosistema/accounts-dockerizada
+````
+
+##### - Mudando as portas expostas, é possível rodar quantos containers quiser.
+##### - Isso é muito fácil. Não precisa separar servidores virtuais e máquinas virtuais para criar imagens(aplicação) e containers(instâncias/aplicações filhas).
+##### - Então, é possível usar a Docker Image para múltiplos ambientes.
+##### - Pode-se fazer o Push da mesma Docker Image para o DockerHub Repository.
+
+
+##### 9. Docker Push
+> - Verificar primeiro as imagens existentes:
+````
+docker images -a
+````
+> - Mudar a tag conforme nome de usuário:
+````
+docker tag server:latest myname/server:latest ou com o ID docker tag d583c3ac45fd myname/server:latest
+````
+> - Remover antiga TAG:
+````
+docker rmi server
+````
+> - Push para o repositório:
+````
+docker image push nome-da-imagem
+````
