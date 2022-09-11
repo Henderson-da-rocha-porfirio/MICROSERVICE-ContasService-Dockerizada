@@ -198,3 +198,17 @@ COPY build/lib/hello-world.txt /deployments/lib/
 FROM registry.access.redhat.com/ubi8/ubi-minimal:8.1 as build
 COPY build/lib/hello-world.txt /deployments/lib/
 ````
+#### c. COPY failed: no source files were specified is .dockerignore file present in your workspace([Copy](https://jhooq.com/docker-copy-failed-no-source-files-were-specified/))
+> 1. Procure o arquivo .dockerignore porque a CLI do docker:
+````
+# ignore or exclude build directory
+*/build*
+*/*/build*
+````
+> - Solução:
+````
+a. Se o arquivo .dockerignore existir no contexto, pode ser possível que haja uma entrada de exclusão para ignorar o diretório de compilação.
+````
+````
+b. Em ambos os casos acima, o diretório de compilação será excluído durante a execução do docker-compose ou do docker.
+````
