@@ -252,7 +252,7 @@ Pode ser possível que seu dockerfileou docker-compose.yamlesteja correto, mas a
 ````
 > 3. Mais comandos e resoluções de [ADD & COPY](https://jhooq.com/docker-copy-vs-docker-add/)
 
-#### 8. Dando Start na imagem:
+#### 8. Dando Start na imagem e criando um container:
 ````
 docker run -p 8080:8080 tuyosistema/accounts-dockerizada
 ````
