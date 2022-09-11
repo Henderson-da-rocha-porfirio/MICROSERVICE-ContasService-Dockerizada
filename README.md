@@ -29,7 +29,7 @@ MAINTAINER tuyosistema.com
 
 COPY target/accounts-dockerizada-0.0.1-SNAPSHOT.jar accounts-dockerizada-0.0.1-SNAPSHOT.jar
 
-ENTRYPOINT ["java","-jar","/accounts-dockerizada-0.0.1-SNAPSHOT"]
+ENTRYPOINT ["java","-jar","/accounts-dockerizada-0.0.1-SNAPSHOTljar"]
 ````
 
 #### 6. Depois de criado, devo rodar um comando no prompt para construir uma nova imagem
