@@ -159,10 +159,9 @@ docker image inspect df1
 ````
 #### 7. Possíveis erros ao tentar rodar o build:
 
- >  - a. Dockerfile: no such file or directory
+ >  - a. Dockerfile: no such file or directory([buildkit](https://stackoverflow.com/questions/66839443/how-to-enable-disable-buildkit-in-docker))
  > 1. Você deve ajustar as configurações do daemon do Docker Engine, armazenadas no arquivo daemon.json, e reiniciar o mecanismo.
  > 2. No aplicativo Docker Desktop para Windows:
 
 > 3. Abra o Painel > Configurações:
 > 4. Selecione Docker Engine e edite o campo json de 'true' para 'false' se ainda não estiver.
-> FONTE: [buildkit](https://stackoverflow.com/questions/66839443/how-to-enable-disable-buildkit-in-docker)
