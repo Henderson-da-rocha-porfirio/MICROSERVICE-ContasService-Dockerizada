@@ -159,13 +159,13 @@ docker image inspect df1
 ````
 #### 7. Possíveis erros ao tentar rodar o build:
 
-#### a. Dockerfile: no such file or directory([Buildkit](https://stackoverflow.com/questions/66839443/how-to-enable-disable-buildkit-in-docker))
+#### A. Dockerfile: no such file or directory([Buildkit](https://stackoverflow.com/questions/66839443/how-to-enable-disable-buildkit-in-docker))
  > 1. Você deve ajustar as configurações do daemon do Docker Engine, armazenadas no arquivo daemon.json, e reiniciar o mecanismo.
  > 2. No aplicativo Docker Desktop para Windows:
 
 > 3. Abra o Painel > Configurações:
 > 4. Selecione Docker Engine e edite o campo json de 'true' para 'false' se ainda não estiver.
-#### b. Docker COPY failed: stat no source files were specified([Copy](https://jhooq.com/docker-copy-failed-no-source-files-were-specified/))
+#### B. Docker COPY failed: stat no source files were specified([Copy](https://jhooq.com/docker-copy-failed-no-source-files-were-specified/))
 > 1. O caminho de origem pode está incorreto:
 ````
 COPY build/lib/* /deployments/lib/
@@ -198,7 +198,7 @@ COPY build/lib/hello-world.txt /deployments/lib/
 FROM registry.access.redhat.com/ubi8/ubi-minimal:8.1 as build
 COPY build/lib/hello-world.txt /deployments/lib/
 ````
-#### c. COPY failed: no source files were specified is .dockerignore file present in your workspace([Copy](https://jhooq.com/docker-copy-failed-no-source-files-were-specified/))
+#### C. COPY failed: no source files were specified is .dockerignore file present in your workspace([Copy](https://jhooq.com/docker-copy-failed-no-source-files-were-specified/))
 > 1. Procure o arquivo .dockerignore porque a CLI do docker:
 ````
 # ignore or exclude build directory
@@ -217,7 +217,7 @@ b. Em ambos os casos acima, o diretório de compilação será excluído durante
 # ignore or exclude build directory
 Run Clean - Se você deseja limpar a compilação anterior, vá em frente e execute a tarefa gradle->clean . Mas não se esqueça de executar as tarefas de compilação após a tarefa de limpeza.
 ````
-#### d. ADD failed : No such file/Directory while building docker image([ADD](https://jhooq.com/docker-copy-failed-no-source-files-were-specified/))
+#### D. ADD failed : No such file/Directory while building docker image([ADD](https://jhooq.com/docker-copy-failed-no-source-files-were-specified/))
 > 1. Vamos dar um exemplo para entender esse problema com uma estrutura de diretórios muito simples com dois arquivos first.txt e second.txt:
 ````
 Project/
