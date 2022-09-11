@@ -212,3 +212,37 @@ a. Se o arquivo .dockerignore existir no contexto, pode ser possível que haja u
 ````
 b. Em ambos os casos acima, o diretório de compilação será excluído durante a execução do docker-compose ou do docker.
 ````
+> 2. Trabalhando com o Gradle:
+````
+# ignore or exclude build directory
+Run Clean - Se você deseja limpar a compilação anterior, vá em frente e execute a tarefa gradle->clean . Mas não se esqueça de executar as tarefas de compilação após a tarefa de limpeza.
+````
+#### d. ADD failed : No such file/Directory while building docker image([ADD](https://jhooq.com/docker-copy-failed-no-source-files-were-specified/))
+> 1. Vamos dar um exemplo para entender esse problema com uma estrutura de diretórios muito simples com dois arquivos first.txt e second.txt:
+````
+Project/
+    |--/home
+           |--src/first.txt
+           |--data/second.txt
+Dockerfile
+````
+> - O arquivo que está provocando este erro:
+````
+ADD first.txt  /destination/
+ADD second.txt /destination/
+````
+> - Então, estou supondo que você criará sua imagem do docker da seguinte maneira:
+````
+docker build -t myimage .
+````
+> - O problema: Para localizar esse problema, primeiro veja como o comando docker build está terminando, terminando com ponto (.), o que significa que o comando docker build procurará o primeiro.txt e o segundo.txt dentro do diretório /Project em vez de /Project/home /src , /Projeto/home/data:
+> - Solução:
+````
+a. Para corrigir esse problema, precisamos atualizar o Dockerfile para selecionar first.txt e second.txt do diretório de origem correto.
+````
+````
+b. Aqui está a versão correta do Dockerfile onde mencionamos o local de origem exato para escolher first.txt e second.txt:
+
+ ADD /home/src/first.txt  /destination/
+ ADD /home/src/second.txt /destination/
+````
