@@ -159,23 +159,43 @@ docker image inspect df1
 ````
 #### 7. Possíveis erros ao tentar rodar o build:
 
- >  - a. Dockerfile: no such file or directory([Buildkit](https://stackoverflow.com/questions/66839443/how-to-enable-disable-buildkit-in-docker))
+#### a. Dockerfile: no such file or directory([Buildkit](https://stackoverflow.com/questions/66839443/how-to-enable-disable-buildkit-in-docker))
  > 1. Você deve ajustar as configurações do daemon do Docker Engine, armazenadas no arquivo daemon.json, e reiniciar o mecanismo.
  > 2. No aplicativo Docker Desktop para Windows:
 
 > 3. Abra o Painel > Configurações:
 > 4. Selecione Docker Engine e edite o campo json de 'true' para 'false' se ainda não estiver.
-
-> - b. Docker COPY failed: stat no source files were specified([Copy](https://jhooq.com/docker-copy-failed-no-source-files-were-specified/))
-> 1. o caminho de origem pode está incorreto:
+#### b. Docker COPY failed: stat no source files were specified([Copy](https://jhooq.com/docker-copy-failed-no-source-files-were-specified/))
+> 1. O caminho de origem pode está incorreto:
 ````
-Observe atentamente o caminho de origem(verificar inclusive se estar faltando o ".jar" ou alguma "\"), pode ser possível que esse caminho não exista.
-
-Corrija o caminho de origem e execute novamente o comando docker build
+COPY build/lib/* /deployments/lib/
 ````
-> 2. arquivo incorreto:
+> - Solução:
 ````
-Pode ser possível que você não tenha o arquivo disponível no caminho de origem.
-
-Para corrigir o problema, coloque o arquivo no caminho correto do build.
+a. Observe atentamente o caminho de origem - "build/lib/*", pode ser possível que esse caminho não exista.
+````
+````
+b. Corrija o caminho de origem e execute novamente o comando docker build.
+````
+> 2. Arquivo incorreto:
+````
+COPY build/lib/* /deployments/lib/
+````
+> - Solução:
+````
+a. Observe atentamente o caminho de origem - "build/lib/*", pode ser possível que esse caminho não exista.
+````
+````
+b. Corrija o caminho de origem e execute novamente o comando docker build.
+````
+> 3. Nome incorreto da imagem de compilação do docker
+````
+COPY build/lib/* /deployments/lib/
+````
+> - Solução:
+````
+a. Observe atentamente o caminho de origem - "build/lib/*", pode ser possível que esse caminho não exista.
+````
+````
+b. Corrija o caminho de origem e execute novamente o comando docker build.
 ````
