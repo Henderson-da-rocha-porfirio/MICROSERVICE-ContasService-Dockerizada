@@ -173,3 +173,9 @@ Observe atentamente o caminho de origem(verificar inclusive se estar faltando o 
 
 Corrija o caminho de origem e execute novamente o comando docker build
 ````
+> 2. arquivo incorreto:
+````
+Pode ser possível que você não tenha o arquivo disponível no caminho de origem.
+
+Para corrigir o problema, coloque o arquivo no caminho correto do build.
+````
