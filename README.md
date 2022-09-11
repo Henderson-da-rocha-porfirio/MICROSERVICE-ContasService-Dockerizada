@@ -251,3 +251,14 @@ b. Aqui está a versão correta do Dockerfile onde mencionamos o local de origem
 Pode ser possível que seu dockerfileou docker-compose.yamlesteja correto, mas ainda assim você está recebendo erro na cópia do docker . Nesses casos, vale a pena verificar a permissão (read, writer, execute) do diretório de origem, bem como a direção de destino.
 ````
 > 3. Mais comandos e resoluções de [ADD & COPY](https://jhooq.com/docker-copy-vs-docker-add/)
+
+#### 8. Dando Start na imagem:
+````
+docker run -p 8080:8080 tuyosistema/accounts-dockerizada
+````
+#### E. Erro: Unable to access jarfile
+- Soluções:
+1. Tentar fechar e reabrir o terminal ou cmd.
+2. Colcocar ".jar" aonde tiver o nome do arquivo. Tipo: accounts-dockerizada-0.0.1-SNAPSHOT.jar
+3. Tentar apagar a pasta target e dar um novo mvn install: mvn clean install -Dmaven.test.skip=true -Dpmd.skip=true
+4. Se possível apagar os containers primeiro e imagens associadas a eles e fazer um novo build.
