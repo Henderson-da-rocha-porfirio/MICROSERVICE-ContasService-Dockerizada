@@ -111,6 +111,10 @@ docker tag server:latest myname/server:latest ou com o ID docker tag d583c3ac45f
 ````
 docker rmi server
 ````
+> - Construindo containers cuja imagem tenha um Dockerfile, exemplo:
+````
+docker build . -t tuyosistema/accounts
+````
 
 ## - Estatísticas
 > - Ver as estatísticas(nome, cpu %, memoria usada e etc):
@@ -131,3 +135,10 @@ docker images -a
 ````
 docker push nome-da-tag/nome-da-imagem
 ````
+
+## - Ispecionar a imagem criada (colocar apenas os três primeiros dígitos do ID. Esse você recebe depois de rodar docker images):
+````
+docker image inspect df1
+````
+### - Isso ajuda a verificar as paths da imagem criada.
+
