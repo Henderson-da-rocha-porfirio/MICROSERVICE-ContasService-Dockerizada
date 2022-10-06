@@ -58,6 +58,7 @@ docker container rm container_ID container_ID
 docker run –-rm container_namedock
 ````
 > - Para mais informações sobre remoção: [Docker Remove](https://www.hostinger.com.br/tutoriais/remover-imagem-docker?ppc_campaign=google_performance_max&gclid=CjwKCAjwsfuYBhAZEiwA5a6CDAOB8R3WLV36fzenVjmYOePjz5ikGfF8mZPs5RHCnzU7UTJ9T5ZbZBoCu5MQAvD_BwE)
+
 > - Criando Novos Containers (novas instâncias), exemplo:
 ````
 docker run -p 8081:8080 tag/nome-da-tag
@@ -123,5 +124,5 @@ docker images -a
 ````
 > - Push para o repositório:
 ````
-docker image push nome-da-imagem
+docker push nome-da-tag/nome-da-imagem
 ````
