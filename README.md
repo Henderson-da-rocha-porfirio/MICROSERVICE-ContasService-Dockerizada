@@ -95,6 +95,10 @@ docker stats
 ````
 docker run -p 8081:8080 tag/nome-da-tag
 ````
+> - Mudando nomes de tags, exemplo:
+````
+docker tag OldName:tag NewName:tag
+````
 > - Criando Novos Containers (novas instâncias) sem ver os logs, exemplo:
 ````
 docker run -d -p 8081:8080 tuyosistema/accounts-dockerizada
