@@ -82,7 +82,12 @@ docker images rmi image_id image_id
 ````
 docker images –f dangling=true
 ````
-> 2. removendo
+> - Remover imagens com force(forçadamente):
+> 2. remover
+````
+docker rmi tuyosistema/loansdockerize --force
+````
+> 3. removendo geral
 ````
 docker images purge
 ````
