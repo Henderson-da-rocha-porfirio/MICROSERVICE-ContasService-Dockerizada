@@ -1,5 +1,6 @@
 # Docker Comandos Principais
-##### - Comandos Docker
+## - Comandos Docker
+## - Containers
 > - Start no Container(os dois dígitos alí referem-se aos dígitos iniciais do id do container que quer startar):
 ````
 docker start f7
@@ -24,10 +25,6 @@ docker pause f7
 ````
 docker unpause f7
 ````
-> - Listar as imagens:
-````
-docker images -a ou docker images
-````
 > - Listar os containers rodando:
 ````
 docker ps
@@ -43,23 +40,6 @@ docker logs 84
 > - Verificar logs continuamente:
 ````
 docker logs -f 84
-````
-> - Remover uma imagem:
-````
-docker image rmi image_id
-````
-> - Remover mais de uma imagem:
-````
-docker images rmi image_id image_id
-````
-> - Remover imagens sem etiqueta(dangling):
-> 1. listar
-````
-docker images –f dangling=true
-````
-> 2. removendo
-````
-docker images purge
 ````
 > - Remover um container:
 ````
@@ -78,7 +58,33 @@ docker container rm container_ID container_ID
 docker run –-rm container_namedock
 ````
 > - Para mais informações sobre remoção: [Docker Remove](https://www.hostinger.com.br/tutoriais/remover-imagem-docker?ppc_campaign=google_performance_max&gclid=CjwKCAjwsfuYBhAZEiwA5a6CDAOB8R3WLV36fzenVjmYOePjz5ikGfF8mZPs5RHCnzU7UTJ9T5ZbZBoCu5MQAvD_BwE)
+> - Criando Novos Containers (novas instâncias), exemplo:
+````
+docker run -p 8081:8080 tag/nome-da-tag
+````
 
+## - Imagens
+> - Listar as imagens:
+````
+docker images -a ou docker images
+````
+> - Remover uma imagem:
+````
+docker image rmi image_id
+````
+> - Remover mais de uma imagem:
+````
+docker images rmi image_id image_id
+````
+> - Remover imagens sem etiqueta/tags(dangling):
+> 1. listar
+````
+docker images –f dangling=true
+````
+> 2. removendo
+````
+docker images purge
+````
 > - Inspecionar Imagem (saber versão, porta e etc):
 ````
 docker image inspect df1
@@ -87,27 +93,9 @@ docker image inspect df1
 ````
 docker container inspect f7
 ````
-> - Ver as estatísticas(nome, cpu %, memoria usada e etc):
-````
-docker stats
-````
-> - Criando Novos Containers (novas instâncias), exemplo:
-````
-docker run -p 8081:8080 tag/nome-da-tag
-````
 > - Mudando nomes de tags, exemplo:
 ````
 docker tag OldName:tag NewName:tag
-````
-> - Criando Novos Containers (novas instâncias) sem ver os logs, exemplo:
-````
-docker run -d -p 8081:8080 tuyosistema/accounts-dockerizada
-````
-
-##### - Docker Push
-> - Verificar primeiro as imagens existentes:
-````
-docker images -a
 ````
 > - Mudar a tag conforme nome de usuário:
 ````
@@ -116,6 +104,22 @@ docker tag server:latest myname/server:latest ou com o ID docker tag d583c3ac45f
 > - Remover antiga TAG:
 ````
 docker rmi server
+````
+
+## - Estatísticas
+> - Ver as estatísticas(nome, cpu %, memoria usada e etc):
+````
+docker stats
+````
+> - Criando Novos Containers (novas instâncias) sem ver os logs, exemplo:
+````
+docker run -d -p 8081:8080 tuyosistema/accounts-dockerizada
+````
+
+## - Docker Push
+> - Verificar primeiro as imagens existentes:
+````
+docker images -a
 ````
 > - Push para o repositório:
 ````
