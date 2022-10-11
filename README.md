@@ -135,6 +135,10 @@ docker images -a
 ````
 docker push nome-da-tag/nome-da-imagem
 ````
+> - Push para o repositório exemplo:
+````
+docker push docker.io/hendersonporfirio/cardsconfigserver
+````
 
 ## - Ispecionar a imagem criada (colocar apenas os três primeiros dígitos do ID. Esse você recebe depois de rodar docker images):
 ````
