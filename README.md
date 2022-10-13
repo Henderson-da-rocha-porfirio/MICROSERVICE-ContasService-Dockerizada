@@ -156,4 +156,3 @@ docker compose up
 ````
  docker compose stop
 ````
-docker compose stop
