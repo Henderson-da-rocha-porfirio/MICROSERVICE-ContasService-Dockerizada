@@ -1,4 +1,4 @@
-# Microserviço Contas Dockerizada com definições no Dockerfile
+# Microserviço Contas Dockerizada com definições no Dockerfile(verificar e buscar outros repositórios meus com docker, buildpacks e docker-compose.yml)
 ### Acessando ao H2
 ### - Lembrar:
 #### a. Criar um arquivo sql: data.sql
