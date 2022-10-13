@@ -152,3 +152,8 @@ docker image inspect df1
 ````
 docker compose up
 ````
+> - Para derrubar os serviços(precisa ser executado de dentro da pasta docker-compose):
+````
+ docker compose stop
+````
+docker compose stop
