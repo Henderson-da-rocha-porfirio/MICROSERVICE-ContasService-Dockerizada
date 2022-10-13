@@ -146,3 +146,9 @@ docker image inspect df1
 ````
 ### - Isso ajuda a verificar as paths da imagem criada.
 
+
+## - Docker Compose
+> - Para levantar os serviços(precisa ser executado de dentro da pasta docker-compose:
+````
+docker compose up
+````
